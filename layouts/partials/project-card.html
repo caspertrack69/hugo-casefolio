@@ -1,10 +1,13 @@
-{{- /* Project card (compact). Used on homepage and project index. */ -}}
+{{- /* Project card (compact). Honors the `external` flag by linking out. */ -}}
+{{- $href := .RelPermalink -}}
+{{- $isExternal := false -}}
+{{- if and .Params.external .Params.liveURL }}{{ $href = .Params.liveURL }}{{ $isExternal = true }}{{ end -}}
 {{- with .Params.cover }}
-<a class="card" href="{{ $.RelPermalink }}">
+<a class="card" href="{{ $href }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
   <div class="card__media">{{ partial "image.html" (dict "page" $ "src" . "alt" ($.Params.coverAlt) "lazy" true) }}</div>
   <div class="card__body">
 {{- else }}
-<a class="card" href="{{ .RelPermalink }}">
+<a class="card" href="{{ $href }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
   <div class="card__body">
 {{- end }}
     {{ partial "meta-row.html" (dict "page" . "showCategory" true) }}
