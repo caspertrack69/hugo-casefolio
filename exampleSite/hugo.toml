@@ -3,7 +3,7 @@
 # Build:        cd exampleSite && hugo --gc --minify
 # The repo root is the theme; themesDir below resolves it by folder name.
 
-baseURL = "https://casefolio.example.net/"
+baseURL = "https://caspertrack69.github.io/hugo-casefolio/"
 defaultContentLanguage = "en"
 locale = "en-us"
 title = "Casefolio"
