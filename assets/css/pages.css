@@ -3,31 +3,60 @@
    taxonomy, 404.
    ===================================================================== */
 
-/* ---- Homepage: hero -------------------------------------------------- */
+/* ---- Homepage: hero (centered, editorial) --------------------------- */
 .hero {
-  padding-block: var(--space-120) var(--space-80);
+  padding-block: var(--space-160) var(--space-100);
   max-width: var(--container);
   margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-4) var(--space-12);
+  border: var(--border-w) var(--border-style) var(--border-chip);
+  border-radius: var(--radius-full);
+  background: var(--surface-chip);
+  font: var(--fw-medium) var(--fs-meta)/var(--fs-meta-lh) var(--font);
+  letter-spacing: 0.04em;
+  color: var(--text-meta-strong);
+}
+.hero__eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--accent-status);
 }
 .hero__headline {
+  margin-top: var(--space-30);
   font: var(--fw-medium) var(--fs-display)/var(--fs-display-lh) var(--font);
   letter-spacing: var(--fs-display-ls);
   color: var(--text);
-  max-width: 16ch;
+  max-width: 20ch;
   text-wrap: balance;
 }
 .hero__intro {
   margin-top: var(--space-20);
   font: var(--fw-regular) var(--fs-body)/var(--fs-body-lh) var(--font);
   color: var(--text-strong-muted);
-  max-width: 62ch;
+  max-width: 54ch;
+  text-wrap: pretty;
 }
 .hero__actions {
-  margin-top: var(--space-30);
+  margin-top: var(--space-40);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: var(--space-12);
+}
+@media (max-width: 600px) {
+  .hero { padding-block: var(--space-100) var(--space-60); }
 }
 
 /* ---- Homepage: about / expertise ------------------------------------ */

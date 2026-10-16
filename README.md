@@ -139,6 +139,7 @@ primaryLabel = "Get started"
 primaryURL = "/projects/"
 
 [params.hero]
+eyebrow = "Available for projects"
 headline = "Your headline."
 intro = "Your intro paragraph."
 primaryLabel = "Browse projects"
