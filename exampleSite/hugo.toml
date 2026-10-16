@@ -37,6 +37,7 @@ description = "A developer-first Hugo theme for project case studies and technic
 defaultOGImage = "/images/og-default.svg"
 colorScheme = "dark"
 favicon = "/images/favicon.svg"
+logo = "/images/logo.png"
 mainSections = ["posts", "projects"]
 
 # --- Homepage section toggles ---

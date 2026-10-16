@@ -11,11 +11,13 @@
     </p>
   </header>
 
-  {{- with .Params.cover }}
+  {{- $cover := .Params.cover -}}
+  {{- $coverAlt := .Params.coverAlt | default "" -}}
+  {{- $isPlaceholder := false -}}
+  {{- if not $cover }}{{ $cover = "/images/placeholder.svg" }}{{ $isPlaceholder = true }}{{ end -}}
   <div class="project__cover">
-    <figure class="media-frame media-frame--hero">{{ partial "image.html" (dict "page" $ "src" . "alt" ($.Params.coverAlt) "lazy" false) }}</figure>
+    <figure class="media-frame media-frame--hero{{ if $isPlaceholder }} is-placeholder{{ end }}">{{ partial "image.html" (dict "page" $ "src" $cover "alt" $coverAlt "lazy" false) }}</figure>
   </div>
-  {{- end }}
 
   {{- if and .Site.Params.display.showTOC (ne .Params.toc false) }}
   {{- with .TableOfContents }}

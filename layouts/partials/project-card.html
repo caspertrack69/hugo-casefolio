@@ -2,14 +2,13 @@
 {{- $href := .RelPermalink -}}
 {{- $isExternal := false -}}
 {{- if and .Params.external .Params.liveURL }}{{ $href = .Params.liveURL }}{{ $isExternal = true }}{{ end -}}
-{{- with .Params.cover }}
+{{- $cover := .Params.cover -}}
+{{- $coverAlt := .Params.coverAlt | default "" -}}
+{{- $isPlaceholder := false -}}
+{{- if not $cover }}{{ $cover = "/images/placeholder.svg" }}{{ $isPlaceholder = true }}{{ end -}}
 <a class="card" href="{{ $href }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
-  <div class="card__media">{{ partial "image.html" (dict "page" $ "src" . "alt" ($.Params.coverAlt) "lazy" true) }}</div>
+  <div class="card__media{{ if $isPlaceholder }} is-placeholder{{ end }}">{{ partial "image.html" (dict "page" $ "src" $cover "alt" $coverAlt "lazy" true) }}</div>
   <div class="card__body">
-{{- else }}
-<a class="card" href="{{ $href }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
-  <div class="card__body">
-{{- end }}
     {{ partial "meta-row.html" (dict "page" . "showCategory" true) }}
     <h3 class="card__title">{{ .Title }}</h3>
     {{- with .Params.summary }}<p class="card__excerpt">{{ . | plainify }}</p>{{ end }}

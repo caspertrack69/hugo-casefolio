@@ -3,10 +3,14 @@
 <header class="site-header">
   <nav class="nav container" aria-label="{{ i18n "primary_nav" }}">
     <a class="nav__brand" href="{{ .Site.Home.RelPermalink }}">
+      {{- with .Site.Params.logo }}
+      <img src="{{ . | relURL }}" alt="{{ $brand }}" class="nav__logo-img">
+      {{- else }}
       {{- with .Site.Params.favicon }}
       <img src="{{ . | relURL }}" alt="" width="22" height="22" class="nav__logo">
       {{- end }}
       <span class="nav__wordmark">{{ $brand }}</span>
+      {{- end }}
     </a>
 
     {{- with .Site.Menus.main }}
