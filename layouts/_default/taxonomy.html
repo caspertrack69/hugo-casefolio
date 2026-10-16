@@ -1,0 +1,31 @@
+{{- /* Unified taxonomy template (Hugo 0.146+): serves both the taxonomy
+       list page (.Data.Terms populated) and individual term pages
+       (.Data.Term set, .Pages populated). */ -}}
+{{ define "main" }}
+<section class="container">
+  <header class="page-header">
+    <div>
+      {{- with .Data.Term }}
+      {{- $plural := $.Data.Plural -}}
+      {{- with $.Site.GetPage (printf "/%s" $plural) }}<p class="breadcrumb" style="margin-bottom:0"><a href="{{ .RelPermalink }}">{{ .Title | default (T $plural) }}</a></p>{{ end -}}
+      {{- end }}
+      <h1 class="page-header__title">{{ .Title | default (T .Data.Plural) }}</h1>
+      {{- if .Data.Term }}<p class="page-header__intro">{{ len .Pages }} {{ if gt (len .Pages) 1 }}entries{{ else }}entry{{ end }}</p>{{ end -}}
+    </div>
+  </header>
+
+  {{- if .Data.Terms }}
+  <div class="tag-row">
+    {{- range .Data.Terms }}
+    <a class="tag" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}<span data-sep>·</span>{{ .Count }}</a>
+    {{- end }}
+  </div>
+  {{- else }}
+  {{- with .Pages }}
+  <div class="grid-cards">
+    {{- range . }}{{ if eq .Section "projects" }}{{ partial "project-card.html" . }}{{ else }}{{ partial "post-card.html" . }}{{ end }}{{ end -}}
+  </div>
+  {{- else }}<p class="empty-state">No entries.</p>{{ end -}}
+  {{- end }}
+</section>
+{{ end }}

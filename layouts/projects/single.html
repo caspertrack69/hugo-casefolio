@@ -33,6 +33,12 @@
 
   {{ partial "gallery.html" . }}
 
+  {{- with .Params.tags }}
+  <div class="article__tags tag-row">
+    {{- range . }}{{ with $.Site.GetPage (printf "/tags/%s" .) }}<a class="tag" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ else }}<span class="tag">{{ . }}</span>{{ end }}{{ end -}}
+  </div>
+  {{- end }}
+
   <nav class="project__nav">
     {{- with .Site.GetPage "/projects" }}
     <a class="btn--link" href="{{ .RelPermalink }}">{{ partial "icon.html" (dict "name" "arrow-left") }} {{ i18n "back_to_projects" }}</a>

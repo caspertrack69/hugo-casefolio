@@ -1,0 +1,7 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $caption := .Get "caption" -}}
+<figure class="figure">
+  <div class="media-frame media-frame--wide">{{ partial "image.html" (dict "page" $.Page "src" $src "alt" $alt "lazy" true) }}</div>
+  {{- with $caption }}<figcaption>{{ . | plainify }}</figcaption>{{ end }}
+</figure>

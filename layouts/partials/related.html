@@ -1,0 +1,23 @@
+{{- /* Related posts by shared tags, then categories (manual, no external API). */ -}}
+{{- $tags := .Params.tags | default slice -}}
+{{- $cats := .Params.categories | default slice -}}
+{{- $related := slice -}}
+{{- range .Site.RegularPages -}}
+  {{- if and (eq .Section "posts") (ne .RelPermalink $.RelPermalink) -}}
+    {{- $shared := 0 -}}
+    {{- with intersect $tags (.Params.tags | default slice) }}{{ $shared = len . }}{{ end -}}
+    {{- if eq $shared 0 }}{{- with intersect $cats (.Params.categories | default slice) }}{{ $shared = len . }}{{ end }}{{ end -}}
+    {{- if gt $shared 0 }}{{ $related = append $related . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- $related = $related | first 3 -}}
+{{- with $related -}}
+<section class="section section--divider">
+  <div class="container">
+    {{ partial "section-header.html" (dict "title" (i18n "related") "link" "/posts/" "label" (i18n "all_posts")) }}
+    <div class="grid-cards">
+      {{- range . }}{{ partial "post-card.html" . }}{{ end -}}
+    </div>
+  </div>
+</section>
+{{- end -}}

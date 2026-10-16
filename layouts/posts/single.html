@@ -1,0 +1,47 @@
+{{ define "main" }}
+<article class="container post">
+  {{- if .Site.Params.display.showBreadcrumbs }}{{ partial "breadcrumb.html" . }}{{ end }}
+
+  <header class="article__header">
+    <h1 class="article__title">{{ .Title }}</h1>
+    <p class="article__byline">
+      {{- with .Params.author }}<span>{{ . }}</span><span data-sep>·</span>{{ end -}}
+      {{- with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ .Format "Jan 2, 2006" }}</time>{{ end -}}
+      {{- if .Site.Params.display.showReadingTime }}<span data-sep>·</span><span>{{ .ReadingTime }} {{ i18n "min_read" }}</span>{{ end -}}
+    </p>
+  </header>
+
+  {{- with .Params.cover }}
+  <div class="project__cover">
+    <figure class="media-frame media-frame--hero">{{ partial "image.html" (dict "page" $ "src" . "alt" ($.Params.coverAlt) "lazy" false) }}</figure>
+  </div>
+  {{- end }}
+
+  {{- if and .Site.Params.display.showTOC (ne .Params.toc false) }}
+  {{- with .TableOfContents }}
+  <div class="toc">
+    <p class="toc__title">{{ i18n "table_of_contents" }}</p>
+    {{ . }}
+  </div>
+  {{- end }}
+  {{- end }}
+
+  {{- with .Content }}
+  <div class="article__body">{{ . }}</div>
+  {{- end }}
+
+  {{- with .Params.tags }}
+  <div class="article__tags tag-row">
+    {{- range . }}{{ with $.Site.GetPage (printf "/tags/%s" .) }}<a class="tag" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ else }}<span class="tag">{{ . }}</span>{{ end }}{{ end -}}
+  </div>
+  {{- end }}
+
+  <nav class="project__nav">
+    {{- with .Site.GetPage "/posts" }}<a class="btn--link" href="{{ .RelPermalink }}">{{ partial "icon.html" (dict "name" "arrow-left") }} {{ i18n "back_to_posts" }}</a>{{ end }}
+    {{- with .PrevInSection }}<a class="btn--link" href="{{ .RelPermalink }}">{{ partial "icon.html" (dict "name" "arrow-left") }} {{ .Title }}</a>{{ end }}
+    {{- with .NextInSection }}<a class="btn--link" href="{{ .RelPermalink }}">{{ i18n "next" }}: {{ .Title }} {{ partial "icon.html" (dict "name" "arrow-right") }}</a>{{ end }}
+  </nav>
+</article>
+
+{{ partial "related.html" . }}
+{{ end }}

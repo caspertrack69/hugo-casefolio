@@ -1,10 +1,27 @@
 {{ define "main" }}
-<article class="article container">
+<article class="container post">
+  {{- if and .Site.Params.display.showBreadcrumbs .Section }}{{ partial "breadcrumb.html" . }}{{ end }}
+
   <header class="article__header">
+    {{- with .Params.profile }}
+    <img class="profile-photo" src="{{ . | relURL }}" alt="{{ $.Title }}" width="96" height="96">
+    {{- end }}
     <h1 class="article__title">{{ .Title }}</h1>
+    {{- with .Params.summary }}<p class="hero__intro">{{ . | plainify }}</p>{{ end }}
   </header>
-  <div class="article__body">
-    {{ .Content }}
+
+  {{- with .Content }}
+  <div class="article__body">{{ . }}</div>
+  {{- end }}
+
+  {{- if .Params.showSocial }}
+  {{- with .Site.Params.social }}
+  <div class="article__tags tag-row">
+    {{- with .github }}<a class="tag" href="{{ . }}" target="_blank" rel="noopener noreferrer">GitHub</a>{{ end }}
+    {{- with .x }}<a class="tag" href="{{ . }}" target="_blank" rel="noopener noreferrer">X</a>{{ end }}
+    {{- with .linkedin }}<a class="tag" href="{{ . }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>{{ end }}
   </div>
+  {{- end }}
+  {{- end }}
 </article>
 {{ end }}

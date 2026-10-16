@@ -149,6 +149,7 @@
 }
 
 /* ---- Article header & metadata -------------------------------------- */
+.post { padding-block: var(--space-60) var(--space-120); }
 .article__header { max-width: var(--article); margin-inline: auto; }
 .article__title {
   font: var(--fw-medium) var(--fs-article-title)/var(--fs-article-title-lh) var(--font);
@@ -167,6 +168,7 @@
 }
 .article__byline [data-sep] { color: var(--text-meta); }
 .article__body { max-width: var(--article); margin-inline: auto; }
+.article__tags { max-width: var(--article); margin-inline: auto; margin-top: var(--space-40); }
 
 /* ---- Project detail -------------------------------------------------- */
 .project { padding-block: var(--space-60) var(--space-120); }
@@ -248,3 +250,25 @@
   .home-about { grid-template-columns: 1fr; gap: var(--space-16); }
   .project__meta { grid-template-columns: 1fr; }
 }
+
+/* ---- Profile, figure, callout, gallery shortcode -------------------- */
+.profile-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  margin-bottom: var(--space-20);
+  border: var(--border-w) var(--border-style) var(--border);
+}
+.figure { margin-block: var(--space-30); }
+.figure figcaption { margin-top: var(--space-8); font: var(--fw-regular) var(--fs-meta)/var(--fs-meta-lh) var(--font); color: var(--text-meta-strong); }
+.callout {
+  margin-block: var(--space-24);
+  padding: var(--space-20) var(--space-24);
+  border: var(--border-w) var(--border-style) var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  color: var(--text-strong-muted);
+}
+.callout :where(p) { color: var(--text-strong-muted); }
+.shortcode-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--gap-cards); margin-block: var(--space-30); }
