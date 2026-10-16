@@ -20,7 +20,7 @@ jobs:
 
       - name: Build example site
         working-directory: exampleSite
-        run: hugo --themesDir ../.. --gc --minify
+        run: hugo --gc --minify
 
       - name: Verify output
         run: |
