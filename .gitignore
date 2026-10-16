@@ -1,0 +1,13 @@
+# Hugo build output
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Task / spec files (not part of the theme)
+/task/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
