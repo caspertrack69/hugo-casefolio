@@ -5,7 +5,7 @@
 
 /* ---- Homepage: hero (centered, editorial) --------------------------- */
 .hero {
-  padding-block: var(--space-160) var(--space-100);
+  padding-block: var(--space-120) var(--space-100);
   max-width: var(--container);
   margin-inline: auto;
   display: flex;
@@ -13,31 +13,12 @@
   align-items: center;
   text-align: center;
 }
-.hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-8);
-  padding: var(--space-4) var(--space-12);
-  border: var(--border-w) var(--border-style) var(--border-chip);
-  border-radius: var(--radius-full);
-  background: var(--surface-chip);
-  font: var(--fw-medium) var(--fs-meta)/var(--fs-meta-lh) var(--font);
-  letter-spacing: 0.04em;
-  color: var(--text-meta-strong);
-}
-.hero__eyebrow::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: var(--radius-full);
-  background: var(--accent-status);
-}
 .hero__headline {
-  margin-top: var(--space-30);
+  margin-top: 0;
   font: var(--fw-medium) var(--fs-display)/var(--fs-display-lh) var(--font);
   letter-spacing: var(--fs-display-ls);
   color: var(--text);
-  max-width: 20ch;
+  max-width: 18ch;
   text-wrap: balance;
 }
 .hero__intro {

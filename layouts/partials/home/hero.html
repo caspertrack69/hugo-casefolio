@@ -1,6 +1,5 @@
 {{- $hero := .Site.Params.hero -}}
 <section class="hero">
-  {{- with $hero.eyebrow }}<span class="hero__eyebrow">{{ . }}</span>{{ end }}
   <h1 class="hero__headline">{{ $hero.headline | default .Site.Title }}</h1>
   {{- with $hero.intro }}<p class="hero__intro">{{ . }}</p>{{ end }}
   <div class="hero__actions">

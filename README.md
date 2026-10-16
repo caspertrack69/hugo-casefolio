@@ -139,8 +139,7 @@ primaryLabel = "Get started"
 primaryURL = "/projects/"
 
 [params.hero]
-eyebrow = "Available for projects"
-headline = "Your headline."
+headline = "Case studies, clearly told."
 intro = "Your intro paragraph."
 primaryLabel = "Browse projects"
 primaryURL = "/projects/"
@@ -384,8 +383,10 @@ hugo-casefolio/
 
 ## Screenshots
 
-Screenshots and a catalog thumbnail will be added once the visual pass is final,
-per the project roadmap. The demo site is the live reference in the meantime.
+![Casefolio theme screenshot](images/screenshot.png)
+
+The catalog thumbnail is available at [`images/tn.png`](images/tn.png). The live
+demo is <https://caspertrack69.github.io/hugo-casefolio/>.
 
 ---
 

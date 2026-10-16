@@ -50,9 +50,8 @@ latestPosts = true
 contactCTA = true
 
 [params.hero]
-eyebrow = "Available for projects"
-headline = "Case studies and technical writing, from one static site."
-intro = "Casefolio is a developer-first Hugo theme for documenting projects as case studies and publishing technical articles - no backend, no framework, no runtime dependencies."
+headline = "Case studies, clearly told."
+intro = "A focused Hugo theme for project case studies and technical writing."
 primaryLabel = "Browse projects"
 primaryURL = "/projects/"
 secondaryLabel = "Read the blog"
@@ -209,5 +208,3 @@ disable = true
 disable = true
 [privacy.x]
 disable = true
-
-
