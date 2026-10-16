@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img">
+  <rect width="1200" height="800" fill="#000000"/>
+  <g>
+    <rect x="80" y="120" width="180" height="180" rx="20" fill="#141414" stroke="#1a1a1a"/>
+    <rect x="80" y="120" width="180" height="90" rx="20" fill="#ffffff"/>
+    <rect x="300" y="120" width="180" height="180" rx="20" fill="#141414" stroke="#1a1a1a"/>
+    <rect x="300" y="120" width="180" height="90" rx="20" fill="#cccccc"/>
+    <rect x="520" y="120" width="180" height="180" rx="20" fill="#141414" stroke="#1a1a1a"/>
+    <rect x="520" y="120" width="180" height="90" rx="20" fill="#999999"/>
+    <rect x="740" y="120" width="180" height="180" rx="20" fill="#141414" stroke="#1a1a1a"/>
+    <rect x="740" y="120" width="180" height="90" rx="20" fill="#666666"/>
+  </g>
+  <text x="80" y="420" font-family="Inter,sans-serif" font-size="40" font-weight="500" fill="#ffffff" letter-spacing="-1.5">Aa Bb Cc</text>
+  <text x="80" y="470" font-family="Inter,sans-serif" font-size="20" fill="#999999">Gray steps on black</text>
+  <rect x="0.5" y="0.5" width="1199" height="799" fill="none" stroke="#1a1a1a"/>
+</svg>

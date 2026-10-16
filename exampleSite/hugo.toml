@@ -32,10 +32,6 @@ term = ["html"]
 changefreq = "monthly"
 priority = 0.5
 
-[permalinks]
-posts = "/posts/:slug/"
-projects = "/projects/:slug/"
-
 [params]
 brand = "Casefolio"
 description = "A developer-first Hugo theme for project case studies and technical writing."
@@ -212,3 +208,5 @@ disable = true
 disable = true
 [privacy.x]
 disable = true
+
+

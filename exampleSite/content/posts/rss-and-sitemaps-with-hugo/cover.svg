@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+  <rect width="1600" height="900" fill="#000000"/>
+  <g fill="#1a2a36">
+    <rect x="200" y="250" width="300" height="120" rx="20"/>
+    <rect x="540" y="250" width="300" height="120" rx="20"/>
+    <rect x="880" y="250" width="300" height="120" rx="20"/>
+  </g>
+  <circle cx="1200" cy="640" r="80" fill="#0099ff" opacity="0.06"/>
+  <text x="200" y="600" font-family="Inter,sans-serif" font-size="28" font-weight="500" fill="#ffffff" letter-spacing="-1">RSS</text>
+  <text x="200" y="640" font-family="Inter,sans-serif" font-size="18" fill="#999999">feeds from configuration</text>
+  <rect x="0.5" y="0.5" width="1599" height="899" fill="none" stroke="#1a1a1a"/>
+</svg>

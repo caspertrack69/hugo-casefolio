@@ -16,9 +16,14 @@ projectType: "Design system"
 year: "2026"
 duration: "3 weeks"
 liveURL: ""
-sourceURL: ""
+sourceURL: "https://github.com/mhdarohman/hugo-casefolio"
 tags: ["design-systems", "css"]
 categories: ["Frontend"]
+gallery:
+  - src: gallery-1.svg
+    alt: "Token color swatches arranged in dark rounded cells."
+  - src: gallery-2.svg
+    alt: "Type scale specimen rendered on a black canvas."
 ---
 ## Overview
 
@@ -31,6 +36,10 @@ The brief was a dark, editorial, content-first interface. Rather than sketch a p
 ## Approach
 
 Define a single `tokens.css` that maps every JSON value to a CSS custom property, then build components that reference only those variables. No color, radius, or spacing value is hard-coded in a component.
+
+## Solution
+
+A token layer (`--bg`, `--text`, `--border`, `--radius-xl`, and so on) feeds every component. The same variables drive responsive scaling through a mobile media query.
 
 ## Outcome
 
