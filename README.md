@@ -383,9 +383,9 @@ hugo-casefolio/
 
 ## Screenshots
 
-![Casefolio theme screenshot](images/screenshot.png)
+![Casefolio theme screenshot](https://raw.githubusercontent.com/caspertrack69/hugo-casefolio/main/images/screenshot.png)
 
-The catalog thumbnail is available at [`images/tn.png`](images/tn.png). The live
+The catalog thumbnail is available at [`images/tn.png`](https://raw.githubusercontent.com/caspertrack69/hugo-casefolio/main/images/tn.png). The live
 demo is <https://caspertrack69.github.io/hugo-casefolio/>.
 
 ---
