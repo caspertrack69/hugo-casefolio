@@ -1,0 +1,41 @@
+{{- $year := now.Format "2006" -}}
+{{- $since := .Site.Params.footer.since -}}
+<footer class="site-footer">
+  <div class="container site-footer__top">
+    <div class="site-footer__brandcol">
+      <a class="site-footer__brand" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Params.brand | default .Site.Title }}</a>
+      {{- with .Site.Params.description }}
+      <p class="site-footer__desc">{{ . }}</p>
+      {{- end }}
+    </div>
+
+    {{- with .Site.Params.footer.columns }}
+    <nav class="site-footer__cols" aria-label="{{ i18n "footer_nav" }}">
+      {{- range . }}
+      <div class="site-footer__col">
+        {{- with .title }}<h2 class="site-footer__heading">{{ . }}</h2>{{ end }}
+        {{- with .links }}
+        <ul class="site-footer__links">
+          {{- range . }}
+          <li><a class="site-footer__link" href="{{ .url | relURL }}">{{ .label }}</a></li>
+          {{- end }}
+        </ul>
+        {{- end }}
+      </div>
+      {{- end }}
+    </nav>
+    {{- end }}
+  </div>
+
+  <div class="container site-footer__bottom">
+    <span class="site-footer__copy">© {{ with $since }}{{ . }}–{{ end }}{{ $year }} {{ .Site.Params.footer.copyright | default .Site.Title }}</span>
+    {{- with .Site.Params.social }}
+    <ul class="site-footer__social" aria-label="{{ i18n "social" }}">
+      {{- with .github }}<li><a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a></li>{{ end }}
+      {{- with .x }}<li><a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="X">X</a></li>{{ end }}
+      {{- with .linkedin }}<li><a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a></li>{{ end }}
+    </ul>
+    {{- end }}
+    {{- if .Site.Params.footer.credit }}<span class="site-footer__credit">Built with <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; Casefolio</span>{{ end }}
+  </div>
+</footer>

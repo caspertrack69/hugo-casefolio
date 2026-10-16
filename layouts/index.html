@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="container hero">
+  <h1 class="hero__headline">{{ .Site.Params.hero.headline | default .Site.Title }}</h1>
+  {{- with .Site.Params.hero.intro }}
+  <p class="hero__intro">{{ . }}</p>
+  {{- end }}
+  <div class="hero__actions">
+    {{- with .Site.Params.hero.primaryLabel }}
+    <a class="btn btn--primary" href="{{ $.Site.Params.hero.primaryURL | default "#" }}">{{ . }}</a>
+    {{- end }}
+    {{- with .Site.Params.hero.secondaryLabel }}
+    <a class="btn btn--ghost" href="{{ $.Site.Params.hero.secondaryURL | default "#" }}">{{ . }}</a>
+    {{- end }}
+  </div>
+</section>
+{{ end }}

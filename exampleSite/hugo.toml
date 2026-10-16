@@ -1,0 +1,214 @@
+# Example site for the Casefolio Hugo theme.
+# Run locally:  cd exampleSite && hugo server
+# Build:        cd exampleSite && hugo --gc --minify
+# The repo root is the theme; themesDir below resolves it by folder name.
+
+baseURL = "https://casefolio.example.net/"
+defaultContentLanguage = "en"
+locale = "en-us"
+title = "Casefolio"
+titleCaseStyle = "none"            # design system forbids title-casing/all-caps
+theme = "hugo-casefolio"
+themesDir = "../.."
+enableRobotsTXT = true
+summaryLength = 28
+timeout = "60s"
+
+[pagination]
+pagerSize = 9
+path = "page"
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+
+[outputs]
+home = ["html", "rss"]
+section = ["html", "rss"]
+taxonomy = ["html"]
+term = ["html"]
+
+[sitemap]
+changefreq = "monthly"
+priority = 0.5
+
+[permalinks]
+posts = "/posts/:slug/"
+projects = "/projects/:slug/"
+
+[params]
+brand = "Casefolio"
+description = "A developer-first Hugo theme for project case studies and technical writing."
+defaultOGImage = "/images/og-default.svg"
+colorScheme = "dark"
+favicon = "/images/favicon.svg"
+mainSections = ["posts", "projects"]
+
+# --- Homepage section toggles ---
+[params.home]
+hero = true
+featuredProjects = true
+about = true
+expertise = true
+latestPosts = true
+contactCTA = true
+
+[params.hero]
+headline = "Case studies and technical writing, from one static site."
+intro = "Casefolio is a developer-first Hugo theme for documenting projects as case studies and publishing technical articles — no backend, no framework, no runtime dependencies."
+primaryLabel = "Browse projects"
+primaryURL = "/projects/"
+secondaryLabel = "Read the blog"
+secondaryURL = "/posts/"
+
+[params.featuredProjects]
+limit = 4
+
+[params.latestPosts]
+limit = 4
+
+[params.about]
+heading = "About"
+body = "Independent software engineer documenting how products are built — from problem framing to shipped outcome. This example site demonstrates the Casefolio theme with neutral, clearly-fictitious demo content."
+
+[params.expertise]
+heading = "Expertise"
+
+[[params.expertise.items]]
+title = "Web performance"
+summary = "Core Web Vitals, asset budgets, and static-site delivery."
+
+[[params.expertise.items]]
+title = "Frontend architecture"
+summary = "Component systems, design tokens, and maintainable templates."
+
+[[params.expertise.items]]
+title = "Technical writing"
+summary = "Case studies, API docs, and engineering notebooks."
+
+[params.contactCTA]
+headline = "Have a project in mind?"
+intro = "Casefolio ships as a reusable Hugo theme. Clone it, configure it, and publish your own case portfolio."
+primaryLabel = "Browse projects"
+primaryURL = "/projects/"
+secondaryLabel = "Read the blog"
+secondaryURL = "/posts/"
+
+[params.nav]
+secondaryLabel = "Source"
+secondaryURL = "https://github.com/mhdarohman/hugo-casefolio"
+primaryLabel = "Get started"
+primaryURL = "/projects/"
+
+[params.display]
+showAuthor = true
+showDate = true
+showReadingTime = true
+showTags = true
+showTOC = true
+showRelated = true
+showBreadcrumbs = true
+
+[params.listing]
+emptyState = true
+
+[params.footer]
+copyright = "Casefolio"
+credit = true
+since = 2026
+
+[[params.footer.columns]]
+title = "Projects"
+
+[[params.footer.columns.links]]
+label = "All projects"
+url = "/projects/"
+
+[[params.footer.columns.links]]
+label = "Tags"
+url = "/tags/"
+
+[[params.footer.columns]]
+title = "Writing"
+
+[[params.footer.columns.links]]
+label = "All articles"
+url = "/posts/"
+
+[[params.footer.columns.links]]
+label = "Categories"
+url = "/categories/"
+
+[[params.footer.columns]]
+title = "Site"
+
+[[params.footer.columns.links]]
+label = "About"
+url = "/about/"
+
+[[params.footer.columns.links]]
+label = "RSS feed"
+url = "/index.xml"
+
+[params.social]
+github = "https://github.com/mhdarohman/hugo-casefolio"
+x = "https://x.com/example"
+linkedin = "https://www.linkedin.com/in/example"
+
+[[menus.main]]
+name = "Projects"
+url = "/projects/"
+weight = 1
+
+[[menus.main]]
+name = "Writing"
+url = "/posts/"
+weight = 2
+
+[[menus.main]]
+name = "Tags"
+url = "/tags/"
+weight = 3
+
+[[menus.main]]
+name = "About"
+url = "/about/"
+weight = 4
+
+# --- Markup ---
+[markup]
+[markup.highlight]
+style = "github-dark"
+lineNos = false
+codeFences = true
+tabWidth = 2
+noClasses = true
+
+[markup.goldmark]
+[markup.goldmark.parser]
+wrapStandAloneImageWithinFigure = false
+[markup.goldmark.parser.attribute]
+block = true
+title = true
+[markup.goldmark.renderer]
+unsafe = true
+[markup.goldmark.extensions]
+[markup.goldmark.extensions.typographer]
+disable = false
+
+# --- Privacy: disable every third-party integration by default ---
+[privacy]
+[privacy.disqus]
+disable = true
+[privacy.googleAnalytics]
+disable = true
+[privacy.instagram]
+disable = true
+[privacy.twitter]
+disable = true
+[privacy.vimeo]
+disable = true
+[privacy.youtube]
+disable = true
+[privacy.x]
+disable = true

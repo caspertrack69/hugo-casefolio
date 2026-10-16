@@ -1,6 +1,9 @@
 # Hugo build output
 /public/
 /resources/_gen/
+exampleSite/public/
+exampleSite/resources/
+exampleSite/.hugo_build.lock
 .hugo_build.lock
 
 # Task / spec files (not part of the theme)

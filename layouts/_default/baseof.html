@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang | default "en" }}"{{ with .Site.Params.colorScheme }} data-color-scheme="{{ . }}"{{ end }}>
+<head>
+{{ partial "head.html" . }}
+</head>
+<body>
+<a class="skip-link" href="#main">{{ i18n "skip_to_content" }}</a>
+{{ partial "header.html" . }}
+<main id="main" class="site-main">
+{{ block "main" . }}{{ end }}
+</main>
+{{ partial "footer.html" . }}
+{{ partial "scripts.html" . }}
+</body>
+</html>
