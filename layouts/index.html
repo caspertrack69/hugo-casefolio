@@ -1,16 +1,9 @@
 {{ define "main" }}
-<section class="container hero">
-  <h1 class="hero__headline">{{ .Site.Params.hero.headline | default .Site.Title }}</h1>
-  {{- with .Site.Params.hero.intro }}
-  <p class="hero__intro">{{ . }}</p>
-  {{- end }}
-  <div class="hero__actions">
-    {{- with .Site.Params.hero.primaryLabel }}
-    <a class="btn btn--primary" href="{{ $.Site.Params.hero.primaryURL | default "#" }}">{{ . }}</a>
-    {{- end }}
-    {{- with .Site.Params.hero.secondaryLabel }}
-    <a class="btn btn--ghost" href="{{ $.Site.Params.hero.secondaryURL | default "#" }}">{{ . }}</a>
-    {{- end }}
-  </div>
-</section>
+{{- $home := .Site.Params.home -}}
+{{- if $home.hero }}{{ partial "home/hero.html" . }}{{ end }}
+{{- if $home.featuredProjects }}{{ partial "home/featured-projects.html" . }}{{ end }}
+{{- if $home.about }}{{ partial "home/about.html" . }}{{ end }}
+{{- if $home.expertise }}{{ partial "home/expertise.html" . }}{{ end }}
+{{- if $home.latestPosts }}{{ partial "home/latest-posts.html" . }}{{ end }}
+{{- if $home.contactCTA }}{{ partial "home/cta.html" . }}{{ end }}
 {{ end }}

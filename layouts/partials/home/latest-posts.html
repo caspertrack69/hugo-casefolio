@@ -1,0 +1,13 @@
+{{- $limit := .Site.Params.latestPosts.limit | default 4 -}}
+{{- $posts := where .Site.RegularPages "Section" "posts" -}}
+{{- $posts = $posts | first $limit -}}
+{{- with $posts -}}
+<section class="section section--divider" id="writing">
+  <div class="container">
+    {{ partial "section-header.html" (dict "title" (i18n "latest_posts") "link" "/posts/" "label" (i18n "all_posts")) }}
+    <div class="grid-cards">
+      {{- range $posts }}{{ partial "post-card.html" . }}{{ end -}}
+    </div>
+  </div>
+</section>
+{{- end -}}

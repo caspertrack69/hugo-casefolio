@@ -1,0 +1,16 @@
+{{- $exp := .Site.Params.expertise -}}
+{{- with $exp.items -}}
+<section class="section section--divider" id="expertise">
+  <div class="container">
+    {{ partial "section-header.html" (dict "title" ($exp.heading | default (i18n "expertise"))) }}
+    <div class="expertise__grid">
+      {{- range . }}
+      <div class="expertise__item">
+        <h3 class="expertise__title">{{ .title }}</h3>
+        {{- with .summary }}<p class="expertise__summary">{{ . }}</p>{{ end }}
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end -}}

@@ -1,0 +1,15 @@
+{{- /* Project card (compact). Used on homepage and project index. */ -}}
+{{- with .Params.cover }}
+<a class="card" href="{{ $.RelPermalink }}">
+  <div class="card__media">{{ partial "image.html" (dict "page" $ "src" . "alt" ($.Params.coverAlt) "lazy" true) }}</div>
+  <div class="card__body">
+{{- else }}
+<a class="card" href="{{ .RelPermalink }}">
+  <div class="card__body">
+{{- end }}
+    {{ partial "meta-row.html" (dict "page" . "showCategory" true) }}
+    <h3 class="card__title">{{ .Title }}</h3>
+    {{- with .Params.summary }}<p class="card__excerpt">{{ . | plainify }}</p>{{ end }}
+    {{- with .Params.technologies }}<div class="tag-row">{{ range first 3 . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
+  </div>
+</a>

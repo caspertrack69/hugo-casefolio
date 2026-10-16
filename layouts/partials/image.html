@@ -1,0 +1,20 @@
+{{- /* Resolve an image from a page-bundle resource or a static path.
+       Emits width/height for raster images (prevents CLS), renders SVG as-is.
+       Props: page, src, alt, lazy, width (optional resize target). */ -}}
+{{- $page := .page -}}
+{{- $src := .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $lazy := .lazy | default false -}}
+{{- $resize := .width | default "1200x" -}}
+{{- $res := $page.Resources.GetMatch $src -}}
+{{- if $res -}}
+  {{- $isSVG := in (printf "%v" $res.MediaType) "svg" -}}
+  {{- if $isSVG -}}
+<img src="{{ $res.RelPermalink }}" alt="{{ $alt }}"{{ if $lazy }} loading="lazy" decoding="async"{{ end }}>
+  {{- else -}}
+    {{- $img := $res.Resize $resize -}}
+<img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $alt }}"{{ if $lazy }} loading="lazy" decoding="async"{{ end }}>
+  {{- end -}}
+{{- else -}}
+<img src="{{ $src | relURL }}" alt="{{ $alt }}"{{ if $lazy }} loading="lazy" decoding="async"{{ end }}>
+{{- end -}}

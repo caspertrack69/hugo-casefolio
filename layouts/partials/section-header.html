@@ -1,0 +1,11 @@
+{{- /* Reusable section header: title + optional "browse all" link.
+       Props: title, link, label */ -}}
+{{- $title := .title -}}
+{{- $link := .link -}}
+{{- $label := .label -}}
+<div class="section-header">
+  <h2 class="section-header__title">{{ $title }}</h2>
+  {{- with $link }}
+  <a class="btn--link" href="{{ $link | relURL }}">{{ $label | default (i18n "browse_all") }}{{ partial "icon.html" (dict "name" "arrow-right") }}</a>
+  {{- end }}
+</div>

@@ -1,0 +1,9 @@
+{{- $about := .Site.Params.about -}}
+{{- with $about.body -}}
+<section class="section section--divider" id="about">
+  <div class="container home-about">
+    <h2 class="home-about__heading">{{ $about.heading | default (i18n "about") }}</h2>
+    <div class="home-about__body">{{ $about.body | $.Page.RenderString }}</div>
+  </div>
+</section>
+{{- end -}}

@@ -1,0 +1,14 @@
+{{- $limit := .Site.Params.featuredProjects.limit | default 4 -}}
+{{- $projects := where .Site.RegularPages "Section" "projects" -}}
+{{- $projects = where $projects "Params.featured" true -}}
+{{- $projects = $projects | first $limit -}}
+{{- with $projects -}}
+<section class="section section--divider" id="featured">
+  <div class="container">
+    {{ partial "section-header.html" (dict "title" (i18n "featured_projects") "link" "/projects/" "label" (i18n "all_projects")) }}
+    <div class="grid-cards">
+      {{- range $projects }}{{ partial "project-card.html" . }}{{ end -}}
+    </div>
+  </div>
+</section>
+{{- end -}}

@@ -1,0 +1,14 @@
+{{- /* Post card (compact). Used on homepage and blog index. */ -}}
+{{- with .Params.cover }}
+<a class="card" href="{{ $.RelPermalink }}">
+  <div class="card__media">{{ partial "image.html" (dict "page" $ "src" . "alt" ($.Params.coverAlt) "lazy" true) }}</div>
+  <div class="card__body">
+{{- else }}
+<a class="card" href="{{ .RelPermalink }}">
+  <div class="card__body">
+{{- end }}
+    {{ partial "meta-row.html" (dict "page" . "showCategory" true "showReadingTime" true) }}
+    <h3 class="card__title">{{ .Title }}</h3>
+    {{- with .Params.summary }}<p class="card__excerpt">{{ . | plainify }}</p>{{ end }}
+  </div>
+</a>

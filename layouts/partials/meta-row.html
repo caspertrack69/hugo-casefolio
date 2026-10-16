@@ -1,0 +1,13 @@
+{{- /* Compact metadata row: category · date (and optional read time).
+       Props: page, showCategory, showReadingTime */ -}}
+{{- $page := .page -}}
+{{- $showCategory := .showCategory | default true -}}
+{{- $showReadingTime := .showReadingTime | default false -}}
+{{- $cat := "" -}}
+{{- with $page.Params.categories }}{{ $cat = index . 0 }}{{ end -}}
+{{- if not $cat }}{{ with $page.Params.projectType }}{{ $cat = . }}{{ end }}{{ end -}}
+<p class="card__meta">
+  {{- with $cat }}{{ if $showCategory }}<span>{{ . }}</span><span data-sep>·</span>{{ end }}{{ end -}}
+  {{- with $page.Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ .Format "Jan 2, 2006" }}</time>{{ end -}}
+  {{- if and $showReadingTime $.Site.Params.display.showReadingTime }}<span data-sep>·</span><span>{{ $page.ReadingTime }} {{ i18n "min_read" }}</span>{{ end -}}
+</p>
