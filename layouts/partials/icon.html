@@ -1,0 +1,18 @@
+{{- $name := .name -}}
+{{- $size := .size | default 16 -}}
+{{- $class := .class | default "icon" -}}
+<span class="{{ $class }}" aria-hidden="true">
+{{- if eq $name "arrow-right" -}}
+<svg width="{{ $size }}" height="{{ $size }}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h9.5M9 4.5 12.5 8 9 11.5"/></svg>
+{{- else if eq $name "arrow-left" -}}
+<svg width="{{ $size }}" height="{{ $size }}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3.5M7 4.5 3.5 8 7 11.5"/></svg>
+{{- else if eq $name "arrow-up" -}}
+<svg width="{{ $size }}" height="{{ $size }}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V3M4.5 7 8 3.5 11.5 7"/></svg>
+{{- else if eq $name "external" -}}
+<svg width="{{ $size }}" height="{{ $size }}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3H3v10h10v-3M9.5 3H13v3.5M13 3 7 9"/></svg>
+{{- else if eq $name "chevron-down" -}}
+<svg width="{{ $size }}" height="{{ $size }}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
+{{- else if eq $name "rss" -}}
+<svg width="{{ $size }}" height="{{ $size }}" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3 11a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm0-6.5A9.5 9.5 0 0 1 12.5 11h-2A7.5 7.5 0 0 0 3 6.5v-2Zm0-3A12.5 12.5 0 0 1 15.5 11h-2A10.5 10.5 0 0 0 3 3.5v-2Z"/></svg>
+{{- end -}}
+</span>
