@@ -1,0 +1,19 @@
+{{- /* Project metadata <dl> — only non-empty fields are rendered. */ -}}
+{{- $any := or .Params.client .Params.role .Params.services .Params.projectType .Params.year .Params.duration .Params.technologies -}}
+{{- if $any -}}
+<dl class="project__meta">
+  {{- with .Params.client }}<div><dt>{{ i18n "client" }}</dt><dd>{{ . }}</dd></div>{{ end -}}
+  {{- with .Params.role }}
+  {{- $v := . -}}{{- if reflect.IsSlice . }}{{ $v = delimit . ", " }}{{ end -}}
+  <div><dt>{{ i18n "role" }}</dt><dd>{{ $v }}</dd></div>
+  {{- end -}}
+  {{- with .Params.services }}<div><dt>{{ i18n "services" }}</dt><dd>{{ delimit . ", " }}</dd></div>{{ end -}}
+  {{- with .Params.projectType }}
+  {{- $v := . -}}{{- if reflect.IsSlice . }}{{ $v = delimit . ", " }}{{ end -}}
+  <div><dt>{{ i18n "projectType" }}</dt><dd>{{ $v }}</dd></div>
+  {{- end -}}
+  {{- with .Params.year }}<div><dt>{{ i18n "year" }}</dt><dd>{{ . }}</dd></div>{{ end -}}
+  {{- with .Params.duration }}<div><dt>{{ i18n "duration" }}</dt><dd>{{ . }}</dd></div>{{ end -}}
+  {{- with .Params.technologies }}<div><dt>{{ i18n "technologies" }}</dt><dd>{{ delimit . ", " }}</dd></div>{{ end -}}
+</dl>
+{{- end -}}

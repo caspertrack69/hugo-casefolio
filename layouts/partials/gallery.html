@@ -1,0 +1,10 @@
+{{- /* Project gallery. Items may be maps {src, alt} or plain path strings. */ -}}
+{{- with .Params.gallery -}}
+<div class="project__gallery">
+  {{- range . }}
+  {{- $src := "" -}}{{- $alt := "" -}}
+  {{- if reflect.IsMap . }}{{ $src = .src }}{{ $alt = .alt }}{{ else }}{{ $src = . }}{{ end -}}
+  <figure class="media-frame media-frame--wide">{{ partial "image.html" (dict "page" $ "src" $src "alt" $alt "lazy" true) }}</figure>
+  {{- end }}
+</div>
+{{- end -}}

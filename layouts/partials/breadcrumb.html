@@ -1,0 +1,12 @@
+{{- /* Breadcrumb: Home / Section / Title */ -}}
+{{- $sec := .Section -}}
+{{- $secPage := $.Site.GetPage (printf "/%s" $sec) -}}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="{{ $.Site.Home.RelPermalink }}">{{ i18n "home" }}</a>
+  {{- with $sec }}
+  <span data-sep>/</span>
+  {{- with $secPage }}<a href="{{ .RelPermalink }}">{{ .Title | default (T $sec) }}</a>{{ else }}<span>{{ T $sec }}</span>{{ end -}}
+  {{- end }}
+  <span data-sep>/</span>
+  <span aria-current="page">{{ .Title }}</span>
+</nav>

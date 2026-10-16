@@ -169,6 +169,7 @@
 .article__body { max-width: var(--article); margin-inline: auto; }
 
 /* ---- Project detail -------------------------------------------------- */
+.project { padding-block: var(--space-60) var(--space-120); }
 .project__cover { margin-top: var(--space-40); max-width: var(--article); margin-inline: auto; }
 .project__meta {
   margin-top: var(--space-40);

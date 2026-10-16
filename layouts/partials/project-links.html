@@ -1,0 +1,3 @@
+{{- /* External project links — live site and source code. */ -}}
+{{- with .Params.liveURL }}<a class="btn btn--primary" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ i18n "live_site" }}{{ partial "icon.html" (dict "name" "external") }}</a>{{ end -}}
+{{- with .Params.sourceURL }}<a class="btn--link" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ i18n "source_code" }}{{ partial "icon.html" (dict "name" "external") }}</a>{{ end -}}

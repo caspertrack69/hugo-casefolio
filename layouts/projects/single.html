@@ -1,0 +1,47 @@
+{{ define "main" }}
+<article class="container project">
+  {{- if .Site.Params.display.showBreadcrumbs }}{{ partial "breadcrumb.html" . }}{{ end }}
+
+  <header class="article__header">
+    <p class="article__byline">
+      {{- with .Params.projectType }}
+      {{- if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end -}}
+      <span data-sep>·</span>
+      {{- end -}}
+      {{- with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ .Format "Jan 2, 2006" }}</time>{{ end -}}
+      {{- with .Params.duration }}<span data-sep>·</span>{{ . }}{{ end -}}
+    </p>
+    <h1 class="article__title">{{ .Title }}</h1>
+    {{- with .Params.summary }}<p class="hero__intro">{{ . | plainify }}</p>{{ end }}
+  </header>
+
+  {{- with .Params.cover }}
+  <div class="project__cover">
+    <figure class="media-frame media-frame--hero">{{ partial "image.html" (dict "page" $ "src" . "alt" ($.Params.coverAlt) "lazy" false) }}</figure>
+  </div>
+  {{- end }}
+
+  {{ partial "project-meta.html" . }}
+
+  {{- if or .Params.liveURL .Params.sourceURL }}
+  <div class="project__links">{{ partial "project-links.html" . }}</div>
+  {{- end }}
+
+  {{- with .Content }}
+  <div class="project__body">{{ . }}</div>
+  {{- end }}
+
+  {{ partial "gallery.html" . }}
+
+  <nav class="project__nav">
+    {{- with .Site.GetPage "/projects" }}
+    <a class="btn--link" href="{{ .RelPermalink }}">{{ partial "icon.html" (dict "name" "arrow-left") }} {{ i18n "back_to_projects" }}</a>
+    {{- else }}
+    <a class="btn--link" href="/projects/">{{ partial "icon.html" (dict "name" "arrow-left") }} {{ i18n "back_to_projects" }}</a>
+    {{- end }}
+    {{- with .NextInSection }}
+    <a class="btn--link" href="{{ .RelPermalink }}">{{ i18n "next_project" }}: {{ .Title }} {{ partial "icon.html" (dict "name" "arrow-right") }}</a>
+    {{- end }}
+  </nav>
+</article>
+{{ end }}

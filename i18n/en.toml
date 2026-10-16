@@ -124,6 +124,12 @@ other = "Social"
 [published]
 other = "Published"
 
+[home]
+other = "Home"
+
+[projectType]
+other = "Type"
+
 [browse_projects]
 other = "Browse projects"
 
