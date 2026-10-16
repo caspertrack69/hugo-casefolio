@@ -7,10 +7,10 @@
       {{- with $cta.intro }}<p class="cta__intro">{{ . }}</p>{{ end }}
       <div class="cta__actions">
         {{- with $cta.primaryLabel }}
-        <a class="btn btn--primary" href="{{ $cta.primaryURL | default "#" }}">{{ . }}</a>
+        <a class="btn btn--primary" href="{{ partial "href.html" (dict "url" ($cta.primaryURL | default "#")) }}">{{ . }}</a>
         {{- end }}
         {{- with $cta.secondaryLabel }}
-        <a class="btn--link" href="{{ $cta.secondaryURL | default "#" }}">{{ . }}{{ partial "icon.html" (dict "name" "arrow-right") }}</a>
+        <a class="btn--link" href="{{ partial "href.html" (dict "url" ($cta.secondaryURL | default "#")) }}">{{ . }}{{ partial "icon.html" (dict "name" "arrow-right") }}</a>
         {{- end }}
       </div>
     </div>

@@ -1,0 +1,6 @@
+{{- /* Resolve a config URL to a subpath-safe href.
+       Leading-slash internal paths are rebased under the baseURL so the
+       theme works under a subpath deploy (e.g. GitHub Pages project sites).
+       External URLs and anchors pass through unchanged. */ -}}
+{{- $u := .url | default "" -}}
+{{- if hasPrefix $u "/" -}}{{- strings.TrimPrefix "/" $u | relURL -}}{{- else -}}{{- $u -}}{{- end -}}

@@ -4,10 +4,10 @@
   {{- with $hero.intro }}<p class="hero__intro">{{ . }}</p>{{ end }}
   <div class="hero__actions">
     {{- with $hero.primaryLabel }}
-    <a class="btn btn--primary" href="{{ $hero.primaryURL | default "#" }}">{{ . }}</a>
+    <a class="btn btn--primary" href="{{ partial "href.html" (dict "url" ($hero.primaryURL | default "#")) }}">{{ . }}</a>
     {{- end }}
     {{- with $hero.secondaryLabel }}
-    <a class="btn--link" href="{{ $hero.secondaryURL | default "#" }}">{{ . }}{{ partial "icon.html" (dict "name" "arrow-right") }}</a>
+    <a class="btn--link" href="{{ partial "href.html" (dict "url" ($hero.secondaryURL | default "#")) }}">{{ . }}{{ partial "icon.html" (dict "name" "arrow-right") }}</a>
     {{- end }}
   </div>
 </section>

@@ -4,7 +4,7 @@
 
   <header class="article__header">
     {{- with .Params.profile }}
-    <img class="profile-photo" src="{{ . | relURL }}" alt="{{ $.Title }}" width="96" height="96">
+    <img class="profile-photo" src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $.Title }}" width="96" height="96">
     {{- end }}
     <h1 class="article__title">{{ .Title }}</h1>
     {{- with .Params.summary }}<p class="hero__intro">{{ . | plainify }}</p>{{ end }}

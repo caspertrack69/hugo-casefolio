@@ -16,5 +16,5 @@
 <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $alt }}"{{ if $lazy }} loading="lazy" decoding="async"{{ end }}>
   {{- end -}}
 {{- else -}}
-<img src="{{ $src | relURL }}" alt="{{ $alt }}"{{ if $lazy }} loading="lazy" decoding="async"{{ end }}>
+<img src="{{ strings.TrimPrefix "/" $src | relURL }}" alt="{{ $alt }}"{{ if $lazy }} loading="lazy" decoding="async"{{ end }}>
 {{- end -}}

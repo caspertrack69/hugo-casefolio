@@ -5,8 +5,8 @@
 {{- else }}{{- with .Site.Params.description }}{{ $description = . }}{{- end }}{{- end }}{{- end -}}
 {{- $image := "" -}}
 {{- with .Params.cover }}
-  {{- with $.Resources.GetMatch . }}{{ $image = .Permalink }}{{- else }}{{ $image = . | absURL }}{{- end -}}
-{{- else }}{{- with .Site.Params.defaultOGImage }}{{ $image = . | absURL }}{{- end }}{{- end -}}
+  {{- with $.Resources.GetMatch . }}{{ $image = .Permalink }}{{- else }}{{ $image = strings.TrimPrefix "/" . | absURL }}{{- end -}}
+{{- else }}{{- with .Site.Params.defaultOGImage }}{{ $image = strings.TrimPrefix "/" . | absURL }}{{- end }}{{- end -}}
 
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description | htmlEscape }}">

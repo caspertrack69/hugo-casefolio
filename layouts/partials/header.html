@@ -4,10 +4,10 @@
   <nav class="nav container" aria-label="{{ i18n "primary_nav" }}">
     <a class="nav__brand" href="{{ .Site.Home.RelPermalink }}">
       {{- with .Site.Params.logo }}
-      <img src="{{ . | relURL }}" alt="{{ $brand }}" class="nav__logo-img">
+      <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $brand }}" class="nav__logo-img">
       {{- else }}
       {{- with .Site.Params.favicon }}
-      <img src="{{ . | relURL }}" alt="" width="22" height="22" class="nav__logo">
+      <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="" width="22" height="22" class="nav__logo">
       {{- end }}
       <span class="nav__wordmark">{{ $brand }}</span>
       {{- end }}
@@ -27,11 +27,11 @@
     <div class="nav__actions">
       {{- with $nav.secondaryLabel }}
       {{- $url := $nav.secondaryURL | default "#" -}}
-      <a class="nav__secondary" href="{{ $url | relLangURL }}"{{ if or (hasPrefix $url "http://") (hasPrefix $url "https://") }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ . }}</a>
+      <a class="nav__secondary" href="{{ partial "href.html" (dict "url" $url) }}"{{ if or (hasPrefix $url "http://") (hasPrefix $url "https://") }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ . }}</a>
       {{- end }}
       {{- with $nav.primaryLabel }}
       {{- $url := $nav.primaryURL | default "#" -}}
-      <a class="btn btn--primary" href="{{ $url | relLangURL }}"{{ if or (hasPrefix $url "http://") (hasPrefix $url "https://") }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ . }}</a>
+      <a class="btn btn--primary" href="{{ partial "href.html" (dict "url" $url) }}"{{ if or (hasPrefix $url "http://") (hasPrefix $url "https://") }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ . }}</a>
       {{- end }}
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="{{ i18n "toggle_menu" }}">
         <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
@@ -48,7 +48,7 @@
     </ul>
     {{- end }}
     {{- with $nav.primaryLabel }}
-    <a class="btn btn--primary btn--block" href="{{ $nav.primaryURL | default "#" | relLangURL }}">{{ . }}</a>
+    <a class="btn btn--primary btn--block" href="{{ partial "href.html" (dict "url" ($nav.primaryURL | default "#")) }}">{{ . }}</a>
     {{- end }}
   </div>
 </header>

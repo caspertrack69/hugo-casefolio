@@ -6,7 +6,7 @@
     <div class="site-footer__brandcol">
       <a class="site-footer__brand" href="{{ .Site.Home.RelPermalink }}">
         {{- with .Site.Params.logo }}
-        <img src="{{ . | relURL }}" alt="{{ $brand }}" class="site-footer__logo-img">
+        <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $brand }}" class="site-footer__logo-img">
         {{- else }}{{ $brand }}{{- end }}
       </a>
       {{- with .Site.Params.description }}
@@ -22,7 +22,7 @@
         {{- with .links }}
         <ul class="site-footer__links">
           {{- range . }}
-          <li><a class="site-footer__link" href="{{ .url | relURL }}">{{ .label }}</a></li>
+          <li><a class="site-footer__link" href="{{ partial "href.html" (dict "url" .url) }}">{{ .label }}</a></li>
           {{- end }}
         </ul>
         {{- end }}

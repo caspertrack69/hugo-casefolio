@@ -6,6 +6,6 @@
 <div class="section-header">
   <h2 class="section-header__title">{{ $title }}</h2>
   {{- with $link }}
-  <a class="btn--link" href="{{ $link | relURL }}">{{ $label | default (i18n "browse_all") }}{{ partial "icon.html" (dict "name" "arrow-right") }}</a>
+  <a class="btn--link" href="{{ partial "href.html" (dict "url" $link) }}">{{ $label | default (i18n "browse_all") }}{{ partial "icon.html" (dict "name" "arrow-right") }}</a>
   {{- end }}
 </div>
