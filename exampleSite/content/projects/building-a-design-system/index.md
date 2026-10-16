@@ -16,7 +16,7 @@ projectType: "Design system"
 year: "2026"
 duration: "3 weeks"
 liveURL: ""
-sourceURL: "https://github.com/mhdarohman/hugo-casefolio"
+sourceURL: "https://github.com/caspertrack69/hugo-casefolio"
 tags: ["design-systems", "css"]
 categories: ["Frontend"]
 gallery:

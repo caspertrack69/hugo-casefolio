@@ -14,7 +14,7 @@ Requirements:
 Clone and run the example site:
 
 ```sh
-git clone https://github.com/mhdarohman/hugo-casefolio.git
+git clone https://github.com/caspertrack69/hugo-casefolio.git
 cd hugo-casefolio/exampleSite
 hugo server
 ```

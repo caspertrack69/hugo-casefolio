@@ -58,7 +58,7 @@ The repository root **is** the theme; `exampleSite/` is a runnable demo that
 references it.
 
 ```sh
-git clone https://github.com/mhdarohman/hugo-casefolio.git
+git clone https://github.com/caspertrack69/hugo-casefolio.git
 cd hugo-casefolio/exampleSite
 hugo server
 ```
@@ -76,7 +76,7 @@ command works locally, in CI, and on hosting providers.
 Add the theme as a Git submodule (recommended, so it stays updatable):
 
 ```sh
-git submodule add https://github.com/mhdarohman/hugo-casefolio.git themes/hugo-casefolio
+git submodule add https://github.com/caspertrack69/hugo-casefolio.git themes/hugo-casefolio
 ```
 
 Then enable it in your site's `hugo.toml`:

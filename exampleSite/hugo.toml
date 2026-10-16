@@ -92,7 +92,7 @@ secondaryURL = "/posts/"
 
 [params.nav]
 secondaryLabel = "Source"
-secondaryURL = "https://github.com/mhdarohman/hugo-casefolio"
+secondaryURL = "https://github.com/caspertrack69/hugo-casefolio"
 primaryLabel = "Get started"
 primaryURL = "/projects/"
 
@@ -147,7 +147,7 @@ label = "RSS feed"
 url = "/index.xml"
 
 [params.social]
-github = "https://github.com/mhdarohman/hugo-casefolio"
+github = "https://github.com/caspertrack69/hugo-casefolio"
 x = "https://x.com/example"
 linkedin = "https://www.linkedin.com/in/example"
 

@@ -3,7 +3,7 @@
 
 name = "Casefolio"
 license = "MIT"
-licenselink = "https://github.com/mhdarohman/hugo-casefolio/blob/main/LICENSE"
+licenselink = "https://github.com/caspertrack69/hugo-casefolio/blob/main/LICENSE"
 description = "A developer-first Hugo theme for project case studies and technical writing. Dark editorial minimalism, content-first, configuration-driven."
 homepage = "https://casefolio.example.net/"
 tags = ["portfolio", "case-study", "blog", "technical-writing", "dark", "minimal", "responsive", "developer", "freelancer"]
@@ -12,7 +12,7 @@ min_version = "0.128.0"
 
 [author]
   name = "Mhd Abdul Rohman"
-  homepage = "https://github.com/mhdarohman"
+  homepage = "https://github.com/caspertrack69"
 
 [module.hugoVersion]
 min = "0.128.0"
