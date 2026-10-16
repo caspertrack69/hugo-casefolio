@@ -4,7 +4,7 @@
 
 Casefolio is a reusable Hugo theme for developers, freelancers, studios, and
 technical writers who want to publish **project case studies** and a
-**technical blog** from a single static site — no backend, no framework, no
+**technical blog** from a single static site - no backend, no framework, no
 runtime dependencies.
 
 The visual language is **dark editorial minimalism**: a pure-black canvas,
@@ -18,7 +18,7 @@ framework.
 ## Features
 
 - **Case-study-aware projects** with rich front matter (client, role, services,
-  stack, duration, live/source links, gallery, outcome) — empty optional fields
+  stack, duration, live/source links, gallery, outcome) - empty optional fields
   are hidden automatically.
 - **Technical blog** with table of contents, reading time, tags/categories,
   related posts, and prev/next navigation.
@@ -34,7 +34,7 @@ framework.
   navigation, reduced-motion support, WCAG-conscious contrast.
 - **Privacy**: all third-party integrations (analytics, embeds) disabled by
   default.
-- **No Node required** — plain CSS and a tiny vanilla-JS nav toggle, piped
+- **No Node required** - plain CSS and a tiny vanilla-JS nav toggle, piped
   through Hugo's native asset pipeline (minify + fingerprint).
 
 ---
@@ -66,7 +66,7 @@ hugo server
 Open <http://localhost:1313/>.
 
 The example site uses `theme = "../.."` in `hugo.toml`, which resolves the theme
-at the repository root **regardless of the checkout folder name** — so the same
+at the repository root **regardless of the checkout folder name** - so the same
 command works locally, in CI, and on hosting providers.
 
 ---
@@ -293,11 +293,11 @@ series: "Hugo essentials"
 
 ### Shortcodes
 
-- `{{</* figure src="image.svg" alt="Alt text" caption="A caption." */>}}` — a
+- `{{</* figure src="image.svg" alt="Alt text" caption="A caption." */>}}` - a
   bordered media frame with an optional caption.
-- `{{</* gallery */>}}...images...{{</* /gallery */>}}` — a responsive gallery
+- `{{</* gallery */>}}...images...{{</* /gallery */>}}` - a responsive gallery
   grid wrapping figures.
-- `{{</* callout */>}}A note.{{</* /callout */>}}` — a highlighted aside.
+- `{{</* callout */>}}A note.{{</* /callout */>}}` - a highlighted aside.
 
 ---
 

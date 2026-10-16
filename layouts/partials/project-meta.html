@@ -1,4 +1,4 @@
-{{- /* Project metadata <dl> — only non-empty fields are rendered. */ -}}
+{{- /* Project metadata <dl> - only non-empty fields are rendered. */ -}}
 {{- $any := or .Params.client .Params.role .Params.services .Params.projectType .Params.year .Params.duration .Params.technologies -}}
 {{- if $any -}}
 <dl class="project__meta">

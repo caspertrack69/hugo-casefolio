@@ -50,7 +50,7 @@ contactCTA = true
 
 [params.hero]
 headline = "Case studies and technical writing, from one static site."
-intro = "Casefolio is a developer-first Hugo theme for documenting projects as case studies and publishing technical articles — no backend, no framework, no runtime dependencies."
+intro = "Casefolio is a developer-first Hugo theme for documenting projects as case studies and publishing technical articles - no backend, no framework, no runtime dependencies."
 primaryLabel = "Browse projects"
 primaryURL = "/projects/"
 secondaryLabel = "Read the blog"
@@ -64,7 +64,7 @@ limit = 4
 
 [params.about]
 heading = "About"
-body = "Independent software engineer documenting how products are built — from problem framing to shipped outcome. This example site demonstrates the Casefolio theme with neutral, clearly-fictitious demo content."
+body = "Independent software engineer documenting how products are built - from problem framing to shipped outcome. This example site demonstrates the Casefolio theme with neutral, clearly-fictitious demo content."
 
 [params.expertise]
 heading = "Expertise"

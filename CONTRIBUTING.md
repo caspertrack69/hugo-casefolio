@@ -30,20 +30,20 @@ site (config + content + images) used for development and deployment.
 
 Key areas:
 
-- `assets/css/` — `tokens.css` (the single source of visual truth), `base.css`,
+- `assets/css/` - `tokens.css` (the single source of visual truth), `base.css`,
   `components.css`, `layout.css`, `pages.css`.
-- `layouts/` — templates and partials. Section-specific templates live under
+- `layouts/` - templates and partials. Section-specific templates live under
   `layouts/projects/` and `layouts/posts/`; shared pieces under
   `layouts/partials/`.
-- `archetypes/` — content scaffolds for `projects`, `posts`, and the default.
-- `i18n/en.toml` — UI strings. Use `i18n "key"` in templates rather than
+- `archetypes/` - content scaffolds for `projects`, `posts`, and the default.
+- `i18n/en.toml` - UI strings. Use `i18n "key"` in templates rather than
   hard-coding labels.
 
 ## Visual conventions (design system)
 
 - The theme follows a dark editorial minimalism style. **`assets/css/tokens.css`
   is the source of truth** for color, type, spacing, radius, and motion.
-- Do **not** hard-code visual values in components or templates — reference the
+- Do **not** hard-code visual values in components or templates - reference the
   tokens.
 - No drop shadows, no gradients on UI chrome, no font weight above 500 (except
   the tiny `NEW` badge), no all-caps headings.
@@ -62,7 +62,7 @@ Key areas:
 
 ## Commit style
 
-Use **atomic commits** — one logical change per commit, with a concise summary
+Use **atomic commits** - one logical change per commit, with a concise summary
 line and a short body explaining why. Keep commits focused so history is easy to
 review and revert.
 

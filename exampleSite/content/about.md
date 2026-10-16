@@ -9,7 +9,7 @@ showSocial: true
 ---
 Casefolio is a reusable Hugo theme for developers, studios, and technical writers who want to publish project case studies and technical articles from a single static site.
 
-This page is a standard Hugo content page rendered with the theme's default single layout. Edit it freely — nothing about the site owner is hard-coded in the templates.
+This page is a standard Hugo content page rendered with the theme's default single layout. Edit it freely - nothing about the site owner is hard-coded in the templates.
 
 {{< callout >}}
 This is a callout block, rendered via the `{{</* callout */>}}` shortcode. Use it for notes, warnings, or side remarks inside articles.
@@ -24,4 +24,4 @@ This is a callout block, rendered via the `{{</* callout */>}}` shortcode. Use i
 
 ## Contact
 
-Reach out through the social links below, or the footer. The example site uses neutral, clearly-fictitious demo contact details — replace them with your own.
+Reach out through the social links below, or the footer. The example site uses neutral, clearly-fictitious demo contact details - replace them with your own.

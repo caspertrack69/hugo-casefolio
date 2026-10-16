@@ -1,5 +1,5 @@
 /* =====================================================================
-   Design tokens — derived from designsystem.json
+   Design tokens - derived from designsystem.json
    Style: "Dark editorial minimalism"
    This file is the single source of truth for visual values.
    Do NOT hard-code colors, type, spacing, radius, or motion elsewhere.
@@ -26,11 +26,11 @@
   --text-dim: #b3b3b3;
   --text-excerpt: #a6a6a6;
   --text-secondary: #999999;
-  --text-meta: #666666;          /* tiny (12px) non-essential metadata only — ~3.7:1 */
-  --text-meta-strong: #8a8a8a;   /* metadata where legibility matters — passes AA */
+  --text-meta: #666666;          /* tiny (12px) non-essential metadata only - ~3.7:1 */
+  --text-meta-strong: #8a8a8a;   /* metadata where legibility matters - passes AA */
   --text-on-inverse: #000000;
 
-  /* ---- Accent (status indicator only — never links/buttons) ---------- */
+  /* ---- Accent (status indicator only - never links/buttons) ---------- */
   --accent-status: #0099ff;
 
   /* ---- Typography ----------------------------------------------------- */
@@ -39,7 +39,7 @@
   --fw-regular: 400;
   --fw-medium: 500;
 
-  /* Type scale — desktop (1rem = 16px) */
+  /* Type scale - desktop (1rem = 16px) */
   --fs-display: 3.5rem;                 /* 56 */
   --fs-display-lh: 1;
   --fs-display-ls: -0.04em;

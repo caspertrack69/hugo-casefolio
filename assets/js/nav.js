@@ -1,4 +1,4 @@
-/* Mobile navigation toggle — vanilla, accessible, reduced-motion safe. */
+/* Mobile navigation toggle - vanilla, accessible, reduced-motion safe. */
 (function () {
   "use strict";
   var toggle = document.querySelector(".nav__toggle");

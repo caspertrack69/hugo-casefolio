@@ -81,7 +81,7 @@ table { width: 100%; border-collapse: collapse; }
 .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gap); }
 .article-column { width: 100%; max-width: var(--article); margin-inline: auto; padding-inline: var(--gap); }
 
-/* Headings — medium weight, tight tracking, never bold, balanced wrap */
+/* Headings - medium weight, tight tracking, never bold, balanced wrap */
 h1, h2, h3, h4, h5, h6 {
   font-weight: var(--fw-medium);
   letter-spacing: -0.01em;

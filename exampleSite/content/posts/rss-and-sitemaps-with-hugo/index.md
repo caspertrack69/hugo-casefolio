@@ -12,7 +12,7 @@ categories: ["Engineering"]
 series: "Hugo essentials"
 toc: true
 ---
-Hugo generates RSS feeds and sitemaps from configuration — no plugins, no Node, no runtime.
+Hugo generates RSS feeds and sitemaps from configuration - no plugins, no Node, no runtime.
 
 ## RSS
 

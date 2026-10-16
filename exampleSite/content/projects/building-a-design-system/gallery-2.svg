@@ -3,7 +3,7 @@
   <text x="80" y="140" font-family="Inter,sans-serif" font-size="72" font-weight="500" fill="#ffffff" letter-spacing="-2.5">Display 56</text>
   <text x="80" y="250" font-family="Inter,sans-serif" font-size="44" font-weight="500" fill="#ffffff" letter-spacing="-1.5">Article 44</text>
   <text x="80" y="340" font-family="Inter,sans-serif" font-size="32" font-weight="500" fill="#cccccc" letter-spacing="-1">Heading 32</text>
-  <text x="80" y="410" font-family="Inter,sans-serif" font-size="18" fill="#cccccc">Body 18 / 1.6 — readable long-form prose</text>
+  <text x="80" y="410" font-family="Inter,sans-serif" font-size="18" fill="#cccccc">Body 18 / 1.6 - readable long-form prose</text>
   <text x="80" y="470" font-family="Inter,sans-serif" font-size="12" fill="#666666">Meta 12 · category · date</text>
   <rect x="0.5" y="0.5" width="1199" height="799" fill="none" stroke="#1a1a1a"/>
 </svg>
